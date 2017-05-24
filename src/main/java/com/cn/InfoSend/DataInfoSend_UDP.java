@@ -29,8 +29,8 @@ public class DataInfoSend_UDP {
 		}
 		logger.info("开始进行udp传输");
 		
-		String host="192.168.1.106";
-		int port=12345;
+		String host="101.37.23.220";
+		int port=22060;
 		int oneselfPort=9999;
 		
 		logger.info("来自"+oneselfPort+"端口发送。"+"----    目标IP地址："+host+"      目标端口地址："+port);
