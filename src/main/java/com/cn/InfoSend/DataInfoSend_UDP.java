@@ -38,8 +38,8 @@ public class DataInfoSend_UDP {
 		//得到目标机器的地址实例
 		InetAddress target = InetAddress.getByName(host);
 		
-		//从9999端口发送数据报
-		DatagramSocket ds = new DatagramSocket(oneselfPort);
+		//从8089端口发送数据报
+		DatagramSocket ds = new DatagramSocket();
 		
 		//将数据转换成Byte类型
 		byte[] buf = dataJson.getBytes("utf-8");
