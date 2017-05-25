@@ -28,10 +28,10 @@ public class DataInfoSend_UDP {
 			return ;
 		}
 		logger.info("开始进行udp传输");
-		
+		logger.info("传输数据："+ dataJson);
 		String host="101.37.23.220";
 		int port=22060;
-		int oneselfPort=9999;
+		int oneselfPort=8089;
 		
 		logger.info("来自"+oneselfPort+"端口发送。"+"----    目标IP地址："+host+"      目标端口地址："+port);
 		
@@ -43,11 +43,15 @@ public class DataInfoSend_UDP {
 		
 		//将数据转换成Byte类型
 		byte[] buf = dataJson.getBytes("utf-8");
-		
+		//byte[] buf="X123123	sdfsdfsdftesttest{errotvarcharvarcharV¶'F@varcharvarcharvarcharvarcharvarchar".getBytes("utf-8");
 		// 把信息打包 new DatagramPacket(发送的字节数组, 数组中要出去多少字节, 对方的ip地址, 对方的端口号);
         // 注意：数据报的长度不能超过 64K
 		//将BUF缓冲区中的数据打包
 		DatagramPacket op = new DatagramPacket(buf, buf.length, target, port);
+		
+		logger.info("处理后数据和长度：==="+buf+"=="+buf.length);
+		System.out.println(buf);
+		System.out.println(buf.length);
 		
 		/*op.setData(buf);
 		op.setLength(buf.length);*/
